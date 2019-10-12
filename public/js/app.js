@@ -1882,16 +1882,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['checkbox_arr', 'user_type_arr'],
   mounted: function mounted() {},
   data: function data() {
     return {
-      // f : Object.keys(this.user_type_arr)[0],
       f: '',
       checkboxArr: this.checkbox_arr,
       UserTypeArr: this.user_type_arr
@@ -1955,14 +1950,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['model', 'checkbox_arr', 'user_type_arr'],
   mounted: function mounted() {
-    // console.log(1);
     console.log(Object.keys(this.user_type_arr)[0]);
   },
   data: function data() {
@@ -2058,12 +2048,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['model', 'user_type_arr'],
   mounted: function mounted() {
-    // console.log(1);
     console.log(Object.keys(this.user_type_arr)[0]);
     console.log(this.model);
     this.model3 = this.model2.slice((this.pagination1.currentPage - 1) * this.perPage, this.pagination1.currentPage * this.perPage);
@@ -19797,9 +19784,7 @@ var render = function() {
           _vm._v(" "),
           _vm._l(_vm.UserTypeArr, function(value, key) {
             return _c("option", { domProps: { value: key } }, [
-              _vm._v(
-                "\n                    " + _vm._s(value) + "\n                "
-              )
+              _vm._v("\n                " + _vm._s(value) + "\n            ")
             ])
           })
         ],
@@ -20054,9 +20039,7 @@ var render = function() {
         },
         _vm._l(_vm.UserTypeArr, function(value, key) {
           return _c("option", { domProps: { value: key } }, [
-            _vm._v(
-              "\n                    " + _vm._s(value) + "\n                "
-            )
+            _vm._v("\n                " + _vm._s(value) + "\n            ")
           ])
         }),
         0

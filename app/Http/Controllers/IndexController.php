@@ -53,6 +53,8 @@ class IndexController extends Controller
     }
 
     /**
+     * Фильтры
+     *
      * @param Request $request
      * @return array
      */
@@ -154,13 +156,9 @@ class IndexController extends Controller
         $model = \App\Models\Views\User::find($id);
 
         $UserTypeArr = UserType::pluck('title', 'id');
-//////////////////////////
         $ViewUserM2mRole = \App\Models\Views\UserM2mRole::where('user_id', $id)->get()->toArray();
         $ViewUserM2mRole = $ViewUserM2mRole[0];
-//        dd($ViewUserM2mRole);
         $ViewUserM2mRole['roleArr'] = explode(',', $ViewUserM2mRole['roleArr']);
-
-
 
         $ViewRoleM2mUserType = RoleM2mUserType::pluck('roleObj', 'user_type_id')->toArray();
         foreach ($ViewRoleM2mUserType as $k5 => &$v5) {
@@ -248,11 +246,11 @@ class IndexController extends Controller
     public function store(StoreUser $request)
     {
         $user = User::Create([
-                "full_name" => $request->full_name,
-                "birthday_date" => $request->birthday_date,
-                "organization" => $request->organization,
-                "user_type_id" => $request->user_type_id,
-            ]);
+            "full_name" => $request->full_name,
+            "birthday_date" => $request->birthday_date,
+            "organization" => $request->organization,
+            "user_type_id" => $request->user_type_id,
+        ]);
 
         if ($request->role) {
             foreach ($request->role as $key => $value) {
@@ -276,6 +274,8 @@ class IndexController extends Controller
 
 
     /**
+     * Сохранение на главной странице
+     *
      * @param Request $request
      * @return array
      */

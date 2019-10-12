@@ -17,7 +17,6 @@
 
         <div class="form-group">
             <label>Тип пользователя</label>
-<!--            <select class="form-control" v-model="model2.user_type_id" name="user_type_id">-->
             <select class="form-control" v-model="f" name="user_type_id">
                 <option :value="key" v-for="(value, key) in UserTypeArr">
                     {{value}}
@@ -28,7 +27,6 @@
         <div class="form-group">
             <label>Блок с чекбоксами</label>
             <ul>
-<!--                <li v-for="(value, key) in checkboxArr[model2.user_type_id]">-->
                 <li v-for="(value, key) in checkboxArr[f]">
                     <div class="form-check">
                         <input type="checkbox" class="form-check-input" :id="'check'+key" v-model="value.checked"
@@ -40,8 +38,6 @@
         </div>
         <input type="hidden" :value="model2.id" name="id">
 
-
-<!--        <button type="button" class="btn btn-light" @click="window.location.href='/index'">Назад</button>-->
         <a href="/" class="btn btn-light">Назад</a>
         <button type="submit" class="btn btn-primary">Сохранить</button>
     </div>
@@ -55,7 +51,6 @@
             'user_type_arr',
         ],
         mounted() {
-            // console.log(1);
             console.log(Object.keys(this.user_type_arr)[0]);
         },
         data: function () {

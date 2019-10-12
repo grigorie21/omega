@@ -37,10 +37,6 @@
                 </li>
             </ul>
         </div>
-<!--        <input type="hidden" :value="model2.id" name="id">-->
-
-
-        <!--        <button type="button" class="btn btn-light" @click="window.location.href='/index'">Назад</button>-->
         <a href="/" class="btn btn-light">Назад</a>
         <button type="submit" class="btn btn-primary">Сохранить</button>
     </div>
@@ -58,7 +54,6 @@
         data: function () {
 
             return {
-                // f : Object.keys(this.user_type_arr)[0],
                 f: '',
                 checkboxArr: this.checkbox_arr,
                 UserTypeArr: this.user_type_arr,

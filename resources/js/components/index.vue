@@ -67,8 +67,6 @@
         </table>
         <div is="uib-pagination" :total-items="totalItems" v-model="pagination1" @change="pageChanged()"
              :items-per-page="perPage"></div>
-
-
     </div>
 </template>
 
@@ -79,7 +77,6 @@
             'user_type_arr',
         ],
         mounted() {
-            // console.log(1);
             console.log(Object.keys(this.user_type_arr)[0]);
             console.log(this.model);
 
@@ -127,7 +124,7 @@
                     })
                     .then(
                         response => {
-                            window.open('/','_blank');
+                            window.open('/', '_blank');
                         });
             },
             find: function () {
