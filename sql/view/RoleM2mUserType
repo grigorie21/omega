@@ -1,0 +1,14 @@
+SELECT
+ `role_m2m_user_type`.user_type_id,
+ GROUP_CONCAT(DISTINCT  JSON_OBJECT(
+ 'id', `role`.id,
+ 'title', `role`.title
+  ))
+FROM
+`role_m2m_user_type`
+LEFT JOIN
+`role`
+ON
+`role`.id = `role_m2m_user_type`.role_id
+GROUP BY
+`role_m2m_user_type`.user_type_id
